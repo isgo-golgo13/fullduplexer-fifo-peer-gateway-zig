@@ -4,7 +4,7 @@ Zig FullDuplex POSIX FIFO Peers and Central FIFO Peer Gateway using POSIX Zig Li
 
 ## Zig vs Rust Versions
 
-This Git repo is the logical equivalent of the Rust version here git@github.com:isgo-golgo13/fullduplexer-fifo-peer-gateway.git.
+This Git repo is the logical equivalent of the Rust version here `git@github.com:isgo-golgo13/fullduplexer-fifo-peer-gateway.git`.
 
 **NOTE**
 1. Zig DOES NOT have direct equivalent to Rust traits system. Zig alternatively offers this logical equivalent
