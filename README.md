@@ -47,6 +47,12 @@ To compile the Zig `build.zig` file, issue the following to the provided Makefil
 make build
 ```
 
+To clean the project files and Docker generated container images, issue the following.
+
+```shell
+make clean
+```
+
 ## Running the Project as Docker Images
 
 Prerequisites: See **Compiling the Project**
