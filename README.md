@@ -37,3 +37,28 @@ fullduplexer-fifo-peer-gateway-zig
     ├── fullduplex-peer.zig
     └── fullduplexer.zig
 ```
+
+
+## Compiling the Project
+
+To compile the Zig `build.zig` file, issue the following to the provided Makefile.
+
+```shell
+make build
+```
+
+## Running the Project as Docker Images
+
+Prerequisites: See **Compiling the Project**
+To run the FullDuplexPeer instances and the FullDuplexPeerGateway, issue the following to Make.
+
+```shell
+make up
+```
+This execute the underlying `docker-compose up`.
+
+To stop the running of the FullDuplexPeer instances and the FullDuplexPeerGateway, issue the following to Make.
+
+```shell
+make down
+```
