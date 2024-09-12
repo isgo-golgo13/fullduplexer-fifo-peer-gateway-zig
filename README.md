@@ -55,10 +55,11 @@ To run the FullDuplexPeer instances and the FullDuplexPeerGateway, issue the fol
 ```shell
 make up
 ```
-This execute the underlying `docker-compose up`.
+This executes the underlying `docker-compose up`.
 
 To stop the running of the FullDuplexPeer instances and the FullDuplexPeerGateway, issue the following to Make.
 
 ```shell
 make down
 ```
+This executes the underlying `docker-compose down`.
