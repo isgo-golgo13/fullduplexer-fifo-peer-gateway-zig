@@ -1,0 +1,34 @@
+# Ignore build artifacts and intermediate files
+zig-out/
+build/
+
+# Ignore temporary files
+*.o
+*.bin
+*.exe
+*.obj
+*.dll
+*.dylib
+*.so
+*.a
+
+# Ignore Zig cache
+zig-cache/
+
+# Ignore test output
+test-output/
+
+# Ignore editor and OS-specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+*.log
+
+# Ignore temporary build logs and files
+*.tmp
+*.log
+*.pid
+*.seed
+*.lock
