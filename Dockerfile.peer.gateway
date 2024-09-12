@@ -1,0 +1,32 @@
+# Stage 1: Build the Zig project
+FROM ziglang/zig:latest AS builder
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the project files
+COPY . .
+
+# Build the gateway binary
+RUN zig build -Drelease-safe -Dgateway
+
+# Stage 2: Create a minimal runtime environment for the gateway
+FROM debian:buster-slim
+
+# Create a non-root user
+RUN useradd -m appuser
+
+# Set working directory
+WORKDIR /home/appuser
+
+# Copy the binary from the builder stage
+COPY --from=builder /app/zig-out/bin/gateway ./gateway
+
+# Ensure the app is owned by the non-root user
+RUN chown -R appuser:appuser /home/appuser
+
+# Switch to the non-root user
+USER appuser
+
+# Command to run the gateway binary
+CMD ["./gateway"]

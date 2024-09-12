@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.peer.gateway
+    container_name: zig_posix_gateway
+    environment:
+      - PEER_ID=gateway
+      - READ_FIFO=/tmp/gateway_read_fifo
+      - WRITE_FIFO=/tmp/gateway_write_fifo
+    networks:
+      - zig_network
+
+  peer1:
+    build:
+      context: .
+      dockerfile: Dockerfile.peer
+    container_name: zig_posix_peer1
+    environment:
+      - PEER_ID=peer1
+      - READ_FIFO=/tmp/peer1_read_fifo
+      - WRITE_FIFO=/tmp/peer1_write_fifo
+    networks:
+      - zig_network
+
+  peer2:
+    build:
+      context: .
+      dockerfile: Dockerfile.peer
+    container_name: zig_posix_peer2
+    environment:
+      - PEER_ID=peer2
+      - READ_FIFO=/tmp/peer2_read_fifo
+      - WRITE_FIFO=/tmp/peer2_write_fifo
+    networks:
+      - zig_network
+
+networks:
+  zig_network:
+    driver: bridge
